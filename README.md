@@ -11,9 +11,9 @@
 
 
 
- <img src="translate.png" width="700" height="180"/>	 
+ <img src="translate.png" width="700" height="160"/>	 
 
-<img src="translate-layout.png" width="500" height="240" />	
+<img src="translate-layout.png" width="600" height="340" />	
 
 
 
