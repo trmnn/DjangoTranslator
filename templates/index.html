@@ -14,7 +14,7 @@
         {% csrf_token %}
         <div class="row">
             <div class="col-sm-6 mt-3 left">
-                <textarea autofocus class="form-control" rows="3" name="my_textarea">{{original_text}}</textarea>
+                <textarea id="inputArea" autofocus class="form-control" rows="3" name="my_textarea">{{original_text}}</textarea>
             </div>
             <div class="col-sm-6 mt-3 left">
                 <textarea class="form-control" rows="3">{{output_text}}</textarea>
@@ -27,3 +27,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+
+<script>
+  function submitOnEnter(event){
+    if(event.which === 13){
+        event.target.form.dispatchEvent(new Event("submit", {cancelable: true}));
+        event.preventDefault(); // Prevents the addition of a new line in the text field (not needed in a lot of cases)
+    }
+  }
+  
+  document.getElementById("inputArea").addEventListener("keypress", submitOnEnter);
+  
+  document.getElementById("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("form submitted");
+  });</script>
+  

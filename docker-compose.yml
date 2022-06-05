@@ -26,3 +26,5 @@ services:
       - db
     stdin_open: true
     tty: true
+    env_file:
+      - ./translator/.env
